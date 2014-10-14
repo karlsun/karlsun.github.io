@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Simple Demo</title>
+    <style type="text/css">
+        @-webkit-keyframes c_1 /* Safari 和 Chrome */
+        {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes c_8 /* Safari 和 Chrome */
+        {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            25% {
+                -webkit-transform: rotate(25deg);
+            }
+            50%{
+                -webkit-transform: rotate(10deg);
+            }
+            75%{
+                -webkit-transform: rotate(30deg);
+            }
+            100%{
+                -webkit-transform: rotate(-10deg);
+            }
+        }
+        @-webkit-keyframes c_9 /* Safari 和 Chrome */
+        {
+            from {
+                width:0px;
+            }
+            to {
+                width:120px;
+            }
+        }
+        body,ul,li,ol,p{
+            margin:0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .board{
+            width: 100%;
+            height: 100%;
+            background-color: #d3d3d3;
+            position: relative;
+        }
+        .control{
+            position: absolute;
+            background-image: url(widgets.png);
+            background-repeat: no-repeat;
+        }
+        .c_1{
+            width: 96px;
+            height: 98px;
+            background-position: -6px top;
+            top: 200px;
+            left : 100px;
+            z-index: 10;
+            cursor:pointer;
+        }
+        .c_1_animation{
+            animation: c_1 5s;
+            -moz-animation: c_1 5s;	/* Firefox */
+            -webkit-animation: c_1 5s;	/* Safari 和 Chrome */
+            -o-animation: c_1 5s;	/* Opera */
+            -webkit-animation-iteration-count : infinite;
+        }
+        .c_2{
+            width: 97px;
+            height: 495px;
+            background-position: -280px top;
+            left: 99px;
+            top :158px;
+        }
+        .c_3{
+            width: 159px;
+            height: 161px;
+            background-position: -113px top;
+            left: 100px;
+            top : 0px;
+        }
+        .c_4{
+            width: 159px;
+            height: 161px;
+            background-position: -113px top;
+            left: 100px;
+            top : 650px;
+            -webkit-transform: rotate(270deg);
+        }
+        .c_5{
+            width: 97px;
+            height: 495px;
+            background-position: -280px top;
+            left: 457px;
+            top :-199px;
+            -webkit-transform: rotate(90deg);
+        }
+        .c_6{
+            width: 97px;
+            height: 495px;
+            background-position: -280px top;
+            left: 457px;
+            top :514px;
+            -webkit-transform: rotate(90deg);
+        }
+        .c_7{
+            width: 68px;
+            height: 82px;
+            background-position: -6px -112px;
+            left: 457px;
+            top :644px;
+        }
+        .c_8{
+            width: 22px;
+            height: 32px;
+            background-position: -78px -112px;
+            left: 481px;
+            top :658px;
+            z-index: 10;
+        }
+        .c_8_animation{
+            -webkit-animation: c_8 2s;	/* Safari 和 Chrome */
+            -webkit-animation-iteration-count : infinite;
+        }
+        .c_9{
+            width: 0px;
+            height: 100px;
+            background-position: -16px -200px;
+            left: 830px;
+            top :706px;
+        }
+        .c_9_animation{
+            -webkit-animation: c_9 1s;	/* Safari 和 Chrome */
+            -webkit-animation-iteration-count : infinite;
+        }
+        .c_10{
+            width: 98px;
+            height: 57px;
+            background-position: -390px top;
+            left: 731px;
+            top :733px;
+            -webkit-transform: rotate(-90deg);
+        }
+        .c_11{
+            width: 97px;
+            height: 35px;
+            background-position: -390px -72px;
+            left: 721px;
+            top :31px;
+            -webkit-transform: rotate(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+        <div class="control c_1"></div>
+        <div class="control c_2"></div>
+        <div class="control c_3"></div>
+        <div class="control c_4"></div>
+        <div class="control c_5"></div>
+        <div class="control c_6"></div>
+        <div class="control c_7"></div>
+        <div class="control c_8"></div>
+        <div class="control c_9"></div>
+        <div class="control c_10"></div>
+        <div class="control c_11"></div>
+    </div>
+    <script type="text/javascript">
+        var _c_1 = document.getElementsByClassName("c_1")[0],
+                _c_9 = document.getElementsByClassName("c_9")[0],
+                _c_8 = document.getElementsByClassName("c_8")[0];
+        _c_1.onclick = function(){
+            if(/c\_1\_animation/.test(this.className)){
+                this.className = this.className.replace('c_1_animation', '');
+                _c_9.className = _c_9.className.replace('c_9_animation', '');
+                _c_8.className = _c_8.className.replace('c_8_animation', '');
+            }else{
+                this.className += " c_1_animation";
+                _c_9.className += " c_9_animation";
+                _c_8.className += " c_8_animation";
+            }
+        };
+    </script>
+</body>
+</html>
